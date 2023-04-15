@@ -113,7 +113,7 @@ on fs
     chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
     mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
 
-on fs && property:ro.boot.product.vendor.sku=lahaina
+on fs && property:ro.boot.product.vendor.sku=taro
     mkdir /mnt/vendor/spunvm 0660 system system
     wait /dev/block/bootdevice/by-name/spunvm
     mount vfat /dev/block/bootdevice/by-name/spunvm /mnt/vendor/spunvm rw noatime shortname=lower,uid=1000,gid=1000,dmask=007,fmask=007,context=u:object_r:vendor_spunvm_file:s0
@@ -249,7 +249,7 @@ service fan_control_turn_off /vendor/bin/fan_control 0
     disabled
     oneshot
 
-service lahaina-post-boot /vendor/bin/init.lahaina.post_boot.sh
+service taro-post-boot /vendor/bin/init.taro.post_boot.sh
     class late_start
     user root
     group root system wakelock graphics
@@ -257,4 +257,4 @@ service lahaina-post-boot /vendor/bin/init.lahaina.post_boot.sh
     oneshot
 
 on property:vendor.post_boot.parsed=1
-    start lahaina-post-boot
+    start taro-post-boot

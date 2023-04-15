@@ -4,7 +4,7 @@
 //
 
 java_library {
-    name: "oplus-fwk.lahaina",
+    name: "oplus-fwk.taro",
     installable: true,
 
     srcs: [
